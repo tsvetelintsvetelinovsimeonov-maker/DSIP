@@ -1,0 +1,78 @@
+6.2
+
+77 = w (small letter)
+
+6F = o
+
+72 = r
+
+6C = l
+
+64 = d
+
+
+
+00001840
+
+
+
+Offset of "hello world!" in hello_world.doc: not directly visible
+
+
+hello_world(1bit).bmp → image data starts at byte 62
+
+- starts from 00000030 after ""57"
+
+
+hello_world(24bit).bmp → image data starts at byte 54
+- starts from 00000030 with the first  "FF"
+
+
+
+
+
+
+6.3
+- I changed the hello_world.txt file to hello_world.exe file and when i run it, it says
+"This app can't run on your PC"
+
+
+- bytes of the hello_world.txt
+
+unsigned char ucDataBlock[12] = {
+ 	// Offset 0x00000000 to 0x0000000B
+ 	0x68, 0x65, 0x6C, 0x6C, 0x6F, 0x20, 0x77, 0x6F, 0x72, 0x6C, 0x64, 0x21
+};
+
+- bytes of the hello_world.exe
+
+unsigned char ucDataBlock[12] = {
+ 	// Offset 0x00000000 to 0x0000000B
+ 	0x68, 0x65, 0x6C, 0x6C, 0x6F, 0x20, 0x77, 0x6F, 0x72, 0x6C, 0x64, 0x21
+};
+Conclusion:
+Changing the extension, does NOT change the bytes inside the file
+
+After renaming the file back to hello_world.txt and setting it to read-only:
+
+- Attempting to edit the file shows: Nothing
+I can change it, but when i try to save it, the file saves in a "new file" and keeps the "original"
+
+7
+Number of disks:
+1 (Disk 0)
+
+2. Disk details:
+Disk 0:
+  Model: WD PC SN5000S SDEQNSJ-1T00-1014
+  Capacity: 953.85 GB
+  Read speed: 6000 MB/s
+  Write speed: 4200 MB/s
+
+3. Partitions:
+Disk 0:
+  Partition 1: 100 MB, EFI System Partition (boot)
+  Partition 2: C: 194.37 GB, OS, BitLocker Encrypted, contains Boot, Page File, Crash Dump, Basic Data Partition
+  Partition 3: 850 MB, Recovery Partition (Healthy)
+  Partition 4: D: 742.13 GB, Data, BitLocker Encrypted, Basic Data Partition
+  Partition 5: WINDRIVER 16.43 GB, Data, BitLocker Encrypted, Basic Data Partition
